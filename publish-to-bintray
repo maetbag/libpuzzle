@@ -1,0 +1,29 @@
+#!/bin/bash
+
+function pkgver {
+	debc $1 | grep Version | awk '/ Version: / { print $2 }'
+}
+
+function mkver {
+	curl https://api.bintray.com/packages/maetbag/deb/libpuzzle/versions \
+           -u maetbag:$BINTRAY_API_KEY \
+	   -d "{\"name\": \"$1\", \"desc\":\"\"}"
+}
+
+function publishpkg {
+	curl https://api.bintray.com/content/maetbag/deb/libpuzzle/$2/pool/main/l/$1 \
+           -u maetbag:$BINTRAY_API_KEY \
+	   -X PUT \
+	   -H "X-Bintray-Debian-Distribution: precise" \
+	   -H "X-Bintray-Debian-Component: main" \
+	   -H "X-Bintray-Debian-Architecture: amd64" \
+	   -H "X-Bintray-Publish: 1" \
+	   -H "X-Bintray-Override: 1" \
+	   -T ../$1
+}
+
+V=$(pkgver libpuzzle1)
+
+mkver $V
+publishpkg libpuzzle1_${V}_amd64.deb $V
+publishpkg libpuzzle-dev_${V}_amd64.deb $V

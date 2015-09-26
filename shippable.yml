@@ -7,3 +7,4 @@ install:
 
 script:
   - yes | debuild -us -uc
+  - bash publish-to-bintray
