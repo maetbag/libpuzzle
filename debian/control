@@ -9,9 +9,8 @@ Package: libpuzzle1
 Section: libs
 Architecture: any
 Depends: libgd2-noxpm | libgd2-xpm,
-         ${shlibs:Depends},
          ${misc:Depends}
-Description: The Puzzle library is designed to quickly find visually similar images (gif, png, jpg), even if they have been resized, recompressed, recolored or slightly modified. 
+Description: puzzle library is designed to quickly find visually similar images.
 
 Package: libpuzzle-dev
 Section: libdevel
