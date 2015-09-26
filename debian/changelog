@@ -1,0 +1,5 @@
+libpuzzle1 (0.11-1) precise; urgency=low
+
+  * Initial packaging.
+
+ -- Evgeniy Bakhtin <bahtin@sotal.tv>  Sat, 26 Sep 2015 14:39:35 +0000
