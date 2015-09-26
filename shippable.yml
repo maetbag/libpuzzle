@@ -1,5 +1,5 @@
 before_install:
-  - apt-get install debhelper dh-autoreconf libgd2-noxpm-dev
+  - sudo apt-get install debhelper dh-autoreconf libgd2-noxpm-dev
 
 script:
   - yes | debuild -us -uc
