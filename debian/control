@@ -2,13 +2,13 @@ Source: libpuzzle1
 Section: libs
 Priority: extra
 Maintainer: Evgeniy Bakhtin <bahtin@sotal.tv>
-Build-Depends: libgd2-noxpm-dev | libgd2-xpm-dev, debhelper (>= 9), dh-autoreconf
+Build-Depends: libgd2-noxpm-dev | libgd2-xpm-dev | libgd-dev, debhelper (>= 9), dh-autoreconf
 Standards-Version: 3.9.3
 
 Package: libpuzzle1
 Section: libs
 Architecture: any
-Depends: libgd2-noxpm | libgd2-xpm,
+Depends: libgd2-noxpm | libgd2-xpm | libgd3,
          ${misc:Depends}
 Description: puzzle library is designed to quickly find visually similar images.
 
